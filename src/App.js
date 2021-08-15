@@ -21,10 +21,11 @@ function App() {
     const handleThemeChange = () => {
         setDarkState(!darkState);
         console.log("theme=", darkState ? "dark" : "light");
+        console.log("store=", store);
     };
 
     return (
-        <>
+
             <div>
                 <Provider store={store}>
                     <ThemeProvider theme={darkState ? dark() : light()}>
@@ -40,7 +41,6 @@ function App() {
                     </ThemeProvider>
                 </Provider>
             </div>
-        </>
     );
 }
 
