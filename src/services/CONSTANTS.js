@@ -18,7 +18,8 @@
 // export const GET_USER_DETAILS = (id) => `https://jsonplaceholder.typicode.com/users/${id}`;
 
 // Local endpoints. Uncomment below section to use dummy local data.
- const BASE_FAKE_API_URL = `https://fakestoreapi.com`;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 export const GET_ALL_USERS = () => `/data/users`;
 export const GET_USER_DETAILS = (id) => `/data/user`;
-export const GET_ALL_PRODUCT = () => `${BASE_FAKE_API_URL}/products`;
+export const GET_ALL_PRODUCT = () => `${BASE_URL}products`;
+export const GET_PRODUCT_BY_ID = (id) => `${BASE_URL}products/${id}`;

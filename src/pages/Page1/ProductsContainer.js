@@ -29,7 +29,9 @@ export const ProductsContainer = () => {
     return (
         <div>
             <ProductsView/>
-            {JSON.stringify(products)}
+            {isLoading ? <span> No product List</span> :
+                <div>{JSON.stringify(products)} </div>
+            }
         </div>
     );
 };
