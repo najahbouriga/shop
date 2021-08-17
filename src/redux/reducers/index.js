@@ -4,8 +4,7 @@
  * combineReducers defines the structure of the store object.
  */
 import {combineReducers} from 'redux';
-import {userReducer}     from './userReducer';
-import {productReducer}  from './productReducer';
+import {productReducer} from './productReducer';
 
 export const rootReducer = combineReducers({
     products: productReducer

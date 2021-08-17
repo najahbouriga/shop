@@ -1,46 +1,30 @@
-import React, {useState} from "react";
+import React, {useEffect} from "react";
 // Handle console logs
 import "utils/dropConsole";
 // Styles
 import "fontsource-roboto";
 // ROUTER
-import {BrowserRouter}   from "react-router-dom";
-import {RouterConfig}    from "navigation/RouterConfig";
-// MUI Theme
-import {ThemeProvider}   from "@material-ui/core";
-import {dark, light}     from "styles/muiTheme";
-import "./App.css";
-import {ProvideAuth}     from "navigation/Auth/ProvideAuth";
+import {BrowserRouter} from "react-router-dom";
+import {RouterConfig} from "navigation/RouterConfig";
+
+import {ProvideAuth} from "navigation/Auth/ProvideAuth";
 // Redux
-import {Provider}        from "react-redux";
-import {store}           from "redux/store";
-import {ThemeSwitch}     from "./components/ThemeSwitch";
+import {Provider, useDispatch} from "react-redux";
+import allActions from "./redux/actions";
+import {store} from "./redux/store";
 
 function App() {
-    const [darkState, setDarkState] = useState(false);
-    const handleThemeChange = () => {
-        setDarkState(!darkState);
-        console.log("theme=", darkState ? "dark" : "light");
-        console.log("store=", store);
-    };
 
+    console.log('store', store)
     return (
+        <Provider store={store}>
+            <ProvideAuth>
+                <BrowserRouter>
+                    <RouterConfig/>
+                </BrowserRouter>
+            </ProvideAuth>
+        </Provider>
 
-            <div>
-                <Provider store={store}>
-                    <ThemeProvider theme={darkState ? dark() : light()}>
-                        <ThemeSwitch
-                            darkState={darkState}
-                            handleThemeChange={handleThemeChange}
-                        />
-                        <ProvideAuth>
-                            <BrowserRouter>
-                                <RouterConfig/>
-                            </BrowserRouter>
-                        </ProvideAuth>
-                    </ThemeProvider>
-                </Provider>
-            </div>
     );
 }
 
