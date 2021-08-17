@@ -8,6 +8,7 @@ import Button from "@material-ui/core/Button";
 import {makeStyles} from '@material-ui/core/styles';
 import {AddShoppingCart} from "@material-ui/icons";
 import IconButton from "@material-ui/core/IconButton";
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -28,10 +29,11 @@ const useStyles = makeStyles((theme) => ({
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
+        cursor: 'pointer',
+
     },
     cardMedia: {
         paddingTop: '56.25%', // 16:9
-        cursor: 'pointer',
         backgroundSize: 'contain',
     },
     cardContent: {
@@ -42,40 +44,46 @@ const Product = ({id, title, price, description, category, image, qty}) => {
     const classes = useStyles();
 
     return (
-        <Card className={classes.card}>
-            <CardMedia
-                className={classes.cardMedia}
-                image={image}
-                title={title}
-            />
+        <Link to={`/details/${id}`}>
+            <Card className={classes.card}
+                  onClick={() => console.log('doultiiiiiiiiiiiiiiiii')}>
 
-            <CardContent className={classes.cardContent}>
-                <Typography gutterBottom variant="h5" component="h2">
-                    {title}
-                </Typography>
-                <Typography>
-                    {price}$
-                </Typography>
-            </CardContent>
+                <CardMedia
+                    className={classes.cardMedia}
+                    image={image}
+                    title={title}
 
-            <CardActions>
-                <Button size="small" color="primary">
-                    View
-                </Button>
-                <Button size="small" color="primary">
-                    Edit
-                </Button>
-                <IconButton
-                    aria-label="Add to Cart"
-                    onClick={() => console.log('button clicked')}>
-                    <Typography variant="button" display="block" color="textPrimary">
-                        Add to cart
+                />
+
+                <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        {title}
                     </Typography>
-                    <AddShoppingCart/>
-                </IconButton>
-            </CardActions>
-        </Card>
-    );
+                    <Typography>
+                        {price}$
+                    </Typography>
+                </CardContent>
+
+                <CardActions>
+                    <Button size="small" color="primary">
+                        View
+                    </Button>
+                    <Button size="small" color="primary">
+                        Edit
+                    </Button>
+                    <IconButton
+                        aria-label="Add to Cart"
+                        onClick={() => console.log('button clicked')}>
+                        <Typography variant="button" display="block" color="textPrimary">
+                            Add to cart
+                        </Typography>
+                        <AddShoppingCart/>
+                    </IconButton>
+                </CardActions>
+            </Card>
+        </Link>
+    )
+        ;
 };
 
 export default Product;
