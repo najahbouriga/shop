@@ -14,7 +14,6 @@ const HomeView = props => {
         <div>
             <Typography variant="h2">HomeView {props.title}</Typography>
             <LanguageSelection />
-            <Button variant="contained" color="primary" onClick={()=>goTo(DASHBOARD)}>Dashboard</Button>
         </div>
     )
 }

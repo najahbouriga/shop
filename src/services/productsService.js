@@ -7,7 +7,7 @@ import {SYSTEM_ERROR}                                         from "../config/CO
  * Function to fetch all the Products.
  */
 export const getAllProducts = () => {
-    console.log("ProductsView Services > getAllProducts called...");
+    console.log("Product Services > getAllProducts called...");
     return new Promise((resolve, reject) => {
         try {
             // do an SDK, DB call or API endpoint axios call here and return the promise.

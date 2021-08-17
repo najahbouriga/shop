@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 // Handle console logs
 import "utils/dropConsole";
 // Styles
@@ -9,11 +9,10 @@ import {RouterConfig} from "navigation/RouterConfig";
 
 import {ProvideAuth} from "navigation/Auth/ProvideAuth";
 // Redux
-import {Provider, useDispatch} from "react-redux";
-import allActions from "./redux/actions";
+import {Provider} from "react-redux";
 import {store} from "./redux/store";
 
-function App() {
+const App = () => {
 
     console.log('store', store)
     return (
@@ -26,6 +25,6 @@ function App() {
         </Provider>
 
     );
-}
+};
 
 export default App;
