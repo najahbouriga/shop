@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { LanguageSelection } from './components/LanguageSelection'
-import {Typography, Button} from '@material-ui/core'
-import { DASHBOARD, ROOT } from 'navigation/CONSTANTS'
+import {LanguageSelection} from './components/LanguageSelection'
+import {Typography} from '@material-ui/core'
+import {ROOT} from 'navigation/CONSTANTS'
 import {useHistory} from 'react-router-dom'
 
 const HomeView = props => {
