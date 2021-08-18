@@ -7,6 +7,7 @@ import Login                        from "./Auth/Login";
 import {AuthorizedPage1}            from "pages/AuthorizedPage1";
 import PrivateRoute                 from "./Auth/PrivateRoute";
 import ProductList                  from "../pages/Products/components/ProductList";
+import DetailProduct                from "../pages/Products/components/DetailProduct";
 
 export const RouterConfig = () => {
     return (
@@ -15,6 +16,7 @@ export const RouterConfig = () => {
                 {/* List all public routes here */}
                 <Route exact path={ROOT} component={Home}/>
                 <Route exact path={PRODUCTS} component={ProductList}/>
+                <Route exact path='/detail/:id' component={DetailProduct}/>
                 <Route path="/login">
                     <Login/>
                 </Route>

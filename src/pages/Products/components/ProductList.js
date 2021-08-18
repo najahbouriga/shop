@@ -1,6 +1,6 @@
-import React        from 'react';
-import Product      from './Product';
-import {Link}       from "react-router-dom";
+import React       from 'react';
+import ProductItem from './ProductItem';
+import {Link}      from "react-router-dom";
 import {ROOT}       from '../../../navigation/CONSTANTS';
 import {Typography} from '@material-ui/core';
 import Grid         from '@material-ui/core/Grid';
@@ -30,7 +30,7 @@ class ProductList extends React.Component {
                     {products.map(
                         (product) =>
                             <Grid key={product.id} item xs={3}>
-                                <Product {...product}/>
+                                <ProductItem {...product}/>
                             </Grid>
                     )}
                 </Grid>

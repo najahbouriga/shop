@@ -40,13 +40,12 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     }
 }));
-const Product = ({id, title, price, description, category, image, qty}) => {
+const ProductItem = ({id, title, price, description, category, image, qty}) => {
     const classes = useStyles();
 
     return (
-        <Card className={classes.card}
-              onClick={() => console.log('doultiiiiiiiiiiiiiiiii')}>
-            <Link to={`/details/${id}`}>
+        <Card className={classes.card}>
+            <Link to={`/detail/${id}`}>
                 <CardMedia
                     className={classes.cardMedia}
                     image={image}
@@ -83,4 +82,4 @@ const Product = ({id, title, price, description, category, image, qty}) => {
         ;
 };
 
-export default Product;
+export default ProductItem;
