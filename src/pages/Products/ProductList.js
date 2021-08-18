@@ -1,11 +1,11 @@
 import React       from 'react';
-import ProductItem from './ProductItem';
-import {Link}      from "react-router-dom";
-import {ROOT}       from '../../../navigation/CONSTANTS';
-import {Typography} from '@material-ui/core';
-import Grid         from '@material-ui/core/Grid';
-import allActions   from '../../../redux/actions';
-import {connect}    from 'react-redux';
+import ProductItem from './components/ProductItem/ProductItem';
+import Grid        from '@material-ui/core/Grid';
+import allActions  from '../../redux/actions';
+import {connect}   from 'react-redux';
+import {NavBar}    from "../../components/Navbar/NavBar";
+import Container   from "@material-ui/core/Container";
+import useStyles   from './styles';
 
 
 class ProductList extends React.Component {
@@ -15,6 +15,7 @@ class ProductList extends React.Component {
     }
 
     render() {
+        const classes = useStyles;
         const {error, loading, products} = this.props;
         if (error) {
             return <div>Error! {error.message}</div>;
@@ -23,9 +24,8 @@ class ProductList extends React.Component {
             return <div>Loading...</div>;
         }
         return (
-            <div>
-                <Link to={ROOT}>Home</Link>
-                <Typography variant="h2">Products List</Typography>
+            <Container maxWidth="lg" className={classes.container}>
+
                 <Grid container justify="center" spacing={3}>
                     {products.map(
                         (product) =>
@@ -34,7 +34,7 @@ class ProductList extends React.Component {
                             </Grid>
                     )}
                 </Grid>
-            </div>
+            </Container>
         );
     }
 }

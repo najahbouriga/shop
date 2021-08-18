@@ -1,8 +1,8 @@
 import React                                from 'react';
 import {connect}                            from "react-redux";
-import {Link}                               from "react-router-dom";
-import {PRODUCTS}                           from "../../../navigation/CONSTANTS";
-import {Button, Grid}                       from "@material-ui/core"
+import {Link}         from "react-router-dom";
+import {PRODUCTS}     from "../../../../navigation/CONSTANTS";
+import {Button, Grid} from "@material-ui/core"
 import {makeStyles}                         from "@material-ui/core/styles";
 import {AddShoppingCart, KeyboardArrowLeft} from "@material-ui/icons";
 import CardMedia                            from "@material-ui/core/CardMedia";
@@ -34,13 +34,10 @@ const DetailProduct = (props) => {
     const product = props.products.filter(product =>
         product.id === Number(props.match.params.id))[0]
     const {category, image, description, price, title,} = product
-    const urlImage = 'https://res.cloudinary.com/caioviski/image/upload/dpr_auto,f_auto,fl_lossy,q_auto/v1563301880/product-3_ldtaes.jpg'
 
     return (
 
         <div>
-            <Link to={PRODUCTS}>Products</Link>
-
             <Grid container direction="row" align="center" alignItems="center" justify="center"
                   className={classes.root}>
                 <Grid item xs={12}>
@@ -51,8 +48,6 @@ const DetailProduct = (props) => {
                     <CardMedia
                         className={classes.cardMedia}
                         image={image}/>
-
-
                     {/*<img src={image} alt="product"/>*/}
                 </Grid>
                 <Grid item xs={6} className={classes.txt}>
