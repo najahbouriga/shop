@@ -9,6 +9,7 @@ const setSearchValue = (searchValue) => ({
 });
 
 const fetchProducts = () => async (dispatch, getState) => {
+    console.log('fetch products data')
     dispatch({type: LOADING});
     try {
         const response = await fetch(`${BASE_URL}products`);
