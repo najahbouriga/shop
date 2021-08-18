@@ -1,9 +1,9 @@
-import {withStyles} from "@material-ui/core";
+import {withStyles} from "@material-ui/styles";
 
-export default withStyles((theme) => ({
+export const useStyles = withStyles((theme) => ({
     container: {
         flexGrow: 1,
-        backgroundColor: 'red',
+        backgroundColor: '#f2f3f3',
         padding: theme.spacing(1, 2),
         display: 'flex',
         justifyContent: 'flex-start',

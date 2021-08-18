@@ -5,7 +5,7 @@ import allActions  from '../../redux/actions';
 import {connect}   from 'react-redux';
 import {NavBar}    from "../../components/Navbar/NavBar";
 import Container   from "@material-ui/core/Container";
-import useStyles   from './styles';
+import {useStyles} from "./styles";
 
 
 class ProductList extends React.Component {
@@ -16,6 +16,7 @@ class ProductList extends React.Component {
 
     render() {
         const classes = useStyles;
+        console.log('container', classes);
         const {error, loading, products} = this.props;
         if (error) {
             return <div>Error! {error.message}</div>;
@@ -25,7 +26,6 @@ class ProductList extends React.Component {
         }
         return (
             <Container maxWidth="lg" className={classes.container}>
-
                 <Grid container justify="center" spacing={3}>
                     {products.map(
                         (product) =>
