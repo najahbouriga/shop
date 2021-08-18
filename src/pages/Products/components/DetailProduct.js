@@ -63,7 +63,7 @@ const DetailProduct = (props) => {
                         <strong>Some Info About the Product: </strong>
                     </p>
                     <p>{description}</p>
-                    <Button component={Link} to="/" variant="contained" className={classes.btn}>
+                    <Button component={Link} to="/products" variant="contained" className={classes.btn}>
                         <KeyboardArrowLeft/>
                         Back to Store
                     </Button>

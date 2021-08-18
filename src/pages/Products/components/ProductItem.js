@@ -7,7 +7,6 @@ import CardActions       from "@material-ui/core/CardActions";
 import Button            from "@material-ui/core/Button";
 import {makeStyles}      from '@material-ui/core/styles';
 import {AddShoppingCart} from "@material-ui/icons";
-import IconButton        from "@material-ui/core/IconButton";
 import {Link}            from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -62,20 +61,26 @@ const ProductItem = ({id, title, price, description, category, image, qty}) => {
             </CardContent>
 
             <CardActions>
-                <Button size="small" color="primary">
-                    View
+                <Button
+                    size="small"
+                    onClick={() => {
+                        console.log('button clicked')
+                    }}
+                    variant="contained"
+                    color="primary"
+                    className={classes.btn}>
+                    Add to cart
+                    <AddShoppingCart/>
                 </Button>
-                <Button size="small" color="primary">
-                    Edit
-                </Button>
-                <IconButton
+
+                {/* <IconButton
                     aria-label="Add to Cart"
                     onClick={() => console.log('button clicked')}>
                     <Typography variant="button" display="block" color="textPrimary">
                         Add to cart
                     </Typography>
                     <AddShoppingCart/>
-                </IconButton>
+                </IconButton>*/}
             </CardActions>
         </Card>
     )
