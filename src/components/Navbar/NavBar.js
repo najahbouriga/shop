@@ -17,7 +17,7 @@ const NavBar = () => {
 
     return (
         <div className={classes.grow}>
-            <AppBar position="static">
+            <AppBar>
                 <Toolbar>
                     <IconButton
                         edge="start"
