@@ -27,7 +27,8 @@ const NavBar = () => {
                         aria-label="open drawer">
                         <StorefrontIcon/>
                     </IconButton>
-                    <Typography className={classes.title} variant="h6" noWrap>
+                    <Typography
+                        className={classes.title} variant="h6" noWrap>
                         Store
                     </Typography>
                     <div className={classes.search}>
@@ -44,8 +45,11 @@ const NavBar = () => {
                     </div>
                     <div className={classes.grow}/>
                     <div className={classes.sectionDesktop}>
-                        <IconButton aria-label="show 17 new notifications" color="inherit">
-                            <Badge badgeContent={17} color="secondary">
+                        <IconButton aria-label="show 17 new notifications"
+                                    component={Link} to="/cart"
+                                    color="inherit">
+                            <Badge badgeContent={17}
+                                   color="secondary">
                                 <ShoppingCart/>
                             </Badge>
                         </IconButton>
