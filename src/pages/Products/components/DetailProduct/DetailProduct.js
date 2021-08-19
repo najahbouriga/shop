@@ -1,11 +1,10 @@
-import React                                from 'react';
-import {connect}                            from "react-redux";
-import {Link}         from "react-router-dom";
-import {PRODUCTS}     from "../../../../navigation/CONSTANTS";
+import React from 'react';
+import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 import {Button, Grid} from "@material-ui/core"
-import {makeStyles}                         from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import {AddShoppingCart, KeyboardArrowLeft} from "@material-ui/icons";
-import CardMedia                            from "@material-ui/core/CardMedia";
+import CardMedia from "@material-ui/core/CardMedia";
 /* this page is shown when the user clicks at the img of a product */
 
 const useStyles = makeStyles((theme) => ({
@@ -48,7 +47,6 @@ const DetailProduct = (props) => {
                     <CardMedia
                         className={classes.cardMedia}
                         image={image}/>
-                    {/*<img src={image} alt="product"/>*/}
                 </Grid>
                 <Grid item xs={6} className={classes.txt}>
                     <h2 className={classes.made}>CATEGORY: {category}</h2>
@@ -58,7 +56,7 @@ const DetailProduct = (props) => {
                         <strong>Some Info About the Product: </strong>
                     </p>
                     <p>{description}</p>
-                    <Button component={Link} to="/products" variant="contained" className={classes.btn}>
+                    <Button component={Link} to="/" variant="contained" className={classes.btn}>
                         <KeyboardArrowLeft/>
                         Back to Store
                     </Button>

@@ -1,14 +1,15 @@
-import React          from 'react';
-import AppBar         from '@material-ui/core/AppBar';
-import Toolbar        from '@material-ui/core/Toolbar';
-import IconButton     from '@material-ui/core/IconButton';
-import Typography     from '@material-ui/core/Typography';
-import InputBase      from '@material-ui/core/InputBase';
-import Badge          from '@material-ui/core/Badge';
-import SearchIcon     from '@material-ui/icons/Search';
+import React from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import InputBase from '@material-ui/core/InputBase';
+import Badge from '@material-ui/core/Badge';
+import SearchIcon from '@material-ui/icons/Search';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import {ShoppingCart} from "@material-ui/icons";
-import {useStyles}    from "./style";
+import {useStyles} from "./style";
+import {Link} from "react-router-dom";
 
 
 const NavBar = () => {
@@ -20,6 +21,7 @@ const NavBar = () => {
                 <Toolbar>
                     <IconButton
                         edge="start"
+                        component={Link} to="/"
                         className={classes.menuButton}
                         color="inherit"
                         aria-label="open drawer">
