@@ -37,6 +37,13 @@ const useStyles = makeStyles((theme) => ({
     },
     cardContent: {
         flexGrow: 1,
+    },
+    cardAction: {
+        padding: 0,
+    },
+    btn: {
+        padding: 0,
+        width: '100%'
     }
 }));
 const ProductItem = ({id, title, price, description, category, image, qty}) => {
@@ -60,18 +67,18 @@ const ProductItem = ({id, title, price, description, category, image, qty}) => {
                 </Typography>
             </CardContent>
 
-            <CardActions>
-                <Button
-                    size="small"
-                    onClick={() => {
-                        console.log('button clicked')
-                    }}
-                    variant="contained"
-                    color="primary"
-                    className={classes.btn}>
-                    Add to cart
+            <CardActions disableSpacing className={classes.cardAction}>
+                <Button size="large"
+                        onClick={() => {
+                            console.log('button clicked')
+                        }}
+                        variant="contained"
+                        color="primary"
+                        className={classes.btn}>
+                    Add to cart &nbsp;&nbsp;
                     <AddShoppingCart/>
                 </Button>
+
 
                 {/* <IconButton
                     aria-label="Add to Cart"

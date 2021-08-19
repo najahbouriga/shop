@@ -25,17 +25,16 @@ class ProductList extends React.Component {
             return <div>Loading...</div>;
         }
         return (
-            <Container maxWidth="lg" className={classes.container}>
+            <div className={classes.root}>
                 <Grid container justify="center" spacing={3}>
                     {products.map(
                         (product) =>
-                            <Grid key={product.id} item xs={3}>
+                            <Grid key={product.id} item xs={12} sm={4} lg={3}>
                                 <ProductItem {...product}/>
                             </Grid>
                     )}
                 </Grid>
-            </Container>
-        );
+            </div>);
     }
 }
 

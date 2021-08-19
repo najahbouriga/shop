@@ -30,7 +30,6 @@ const App = (props) => {
                 </BrowserRouter>
             </ProvideAuth>
         </Provider>
-
     );
 };
 
