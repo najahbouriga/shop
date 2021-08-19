@@ -1,15 +1,14 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import SearchIcon from '@material-ui/icons/Search';
+import React          from 'react';
+import AppBar         from '@material-ui/core/AppBar';
+import Toolbar        from '@material-ui/core/Toolbar';
+import IconButton     from '@material-ui/core/IconButton';
+import Typography     from '@material-ui/core/Typography';
+import Badge          from '@material-ui/core/Badge';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import {ShoppingCart} from "@material-ui/icons";
-import {useStyles} from "./style";
-import {Link} from "react-router-dom";
+import {useStyles}    from "./style";
+import {Link}         from "react-router-dom";
+import Search         from "./components/search";
 
 
 const NavBar = () => {
@@ -31,18 +30,7 @@ const NavBar = () => {
                         className={classes.title} variant="h6" noWrap>
                         Store
                     </Typography>
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon/>
-                        </div>
-                        <InputBase
-                            placeholder="Search…"
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }} inputProps={{'aria-label': 'search'}}
-                        />
-                    </div>
+                   <Search/>
                     <div className={classes.grow}/>
                     <div className={classes.sectionDesktop}>
                         <IconButton aria-label="show 17 new notifications"
