@@ -1,18 +1,21 @@
-import React              from 'react';
-import AppBar             from '@material-ui/core/AppBar';
-import Toolbar            from '@material-ui/core/Toolbar';
-import IconButton         from '@material-ui/core/IconButton';
-import Typography         from '@material-ui/core/Typography';
-import Badge              from '@material-ui/core/Badge';
-import StorefrontIcon     from '@material-ui/icons/Storefront';
-import {ShoppingCart}     from "@material-ui/icons";
-import {useStyles}        from "./style";
+import React from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import Badge from '@material-ui/core/Badge';
+import StorefrontIcon from '@material-ui/icons/Storefront';
+import {ShoppingCart} from "@material-ui/icons";
+import {useStyles} from "./style";
 import {Link, withRouter} from "react-router-dom";
-import Search             from "./components/search";
+import Search from "./components/search";
+import {useSelector} from "react-redux";
 
+const selectAmount = (state) => state.cart.amount;
 
 const NavBar = () => {
     const classes = useStyles();
+    const amount = useSelector(selectAmount);
     const location = window.location.pathname
     return (
         <div className={classes.grow}>
@@ -38,7 +41,7 @@ const NavBar = () => {
                         <IconButton aria-label="show 17 new notifications"
                                     component={Link} to="/cart"
                                     color="inherit">
-                            <Badge badgeContent={17}
+                            <Badge badgeContent={amount}
                                    color="secondary">
                                 <ShoppingCart/>
                             </Badge>

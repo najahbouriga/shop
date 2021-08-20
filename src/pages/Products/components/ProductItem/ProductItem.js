@@ -1,13 +1,15 @@
-import React             from "react";
-import Card              from "@material-ui/core/Card";
-import CardMedia         from "@material-ui/core/CardMedia";
-import CardContent       from "@material-ui/core/CardContent";
-import Typography        from "@material-ui/core/Typography";
-import CardActions       from "@material-ui/core/CardActions";
-import Button            from "@material-ui/core/Button";
-import {makeStyles}      from '@material-ui/core/styles';
+import React from "react";
+import Card from "@material-ui/core/Card";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+import CardActions from "@material-ui/core/CardActions";
+import Button from "@material-ui/core/Button";
+import {makeStyles} from '@material-ui/core/styles';
 import {AddShoppingCart} from "@material-ui/icons";
-import {Link}            from "react-router-dom";
+import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import allActions from "../../../../redux/actions";
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -48,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 const ProductItem = ({id, title, price, description, category, image, qty}) => {
     const classes = useStyles();
-
+    const dispatch = useDispatch();
     return (
         <Card className={classes.card}>
             <Link to={`/detail/${id}`}>
@@ -69,25 +71,24 @@ const ProductItem = ({id, title, price, description, category, image, qty}) => {
 
             <CardActions disableSpacing className={classes.cardAction}>
                 <Button size="large"
-                        onClick={() => {
-                            console.log('button clicked')
-                        }}
+                        onClick={() =>
+                            dispatch(
+                                allActions.cartActions.addToCart(
+                                    id,
+                                    title,
+                                    price,
+                                    description,
+                                    category,
+                                    image,
+                                    qty
+                                ))
+                        }
                         variant="contained"
                         color="primary"
                         className={classes.btn}>
                     Add to cart &nbsp;&nbsp;
                     <AddShoppingCart/>
                 </Button>
-
-
-                {/* <IconButton
-                    aria-label="Add to Cart"
-                    onClick={() => console.log('button clicked')}>
-                    <Typography variant="button" display="block" color="textPrimary">
-                        Add to cart
-                    </Typography>
-                    <AddShoppingCart/>
-                </IconButton>*/}
             </CardActions>
         </Card>
     )

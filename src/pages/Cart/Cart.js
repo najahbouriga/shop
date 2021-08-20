@@ -1,20 +1,16 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React from 'react';
+import {useSelector} from 'react-redux';
 
-function mapStateToProps(state) {
-    return {};
-}
+const selectAmount = (state) => state.cart.amount;
+const selectCart = (state) => state.cart.cart;
+const Cart = () => {
+    const cart = useSelector(selectCart);
+    const amount = useSelector(selectAmount);
+    return (<div>
+        {JSON.stringify(cart)}
+        {JSON.stringify(amount)}
+    </div>)
+};
 
-class Cart extends Component {
-    render() {
-        return (
-            <div>
-                i m a cat component
-            </div>
-        );
-    }
-}
 
-export default connect(
-    mapStateToProps,
-)(Cart);
+export default Cart;

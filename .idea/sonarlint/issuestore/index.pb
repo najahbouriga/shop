@@ -1,0 +1,35 @@
+
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+Y
+)src/pages/Dashboard/DashboardContainer.js,8\f\8f9673a68b81ac556fadab74187141d9c04aba49
+T
+$src/pages/Dashboard/DashboardView.js,9\9\99648660531778386e0ef7cab611a968236142a8
+O
+src/pages/Page1/ProductsView.js,9\0\90d8af93eb12ebfbc0cc7e0f0a1859b39a780b46
+F
+src/redux/CONSTANTS.js,7\d\7db848a0f975913e67f9d3fb99d9b2d40ed29366
+Q
+!src/redux/reducers/userReducer.js,d\3\d32cb5c4e653693c621ffab451fd1097899a632a
+B
+src/redux/store.js,b\f\bf7810bad55c8c031251188a5290278db09e4dfc
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+O
+src/services/productsService.js,e\a\eac70f04b30307b91553509e6bd5e34bc52ea87c
+I
+src/services/CONSTANTS.js,4\7\478923d3b758e903fe190ec96c825803ad56466e
+S
+#src/redux/actions/productActions.js,8\4\84f81fa7596adc2386563419c32508689834ce99
+T
+$src/redux/reducers/productReducer.js,7\b\7b914c5c527aced0db6a86e3b52fbe93419f4ee3
+K
+src/redux/reducers/index.js,a\3\a3e09697439a4fe8dee09188a82acaa2729bacd4
+J
+src/redux/actions/types.js,0\a\0af22d9ceadc5738c67d511a4871089f615b71b9
+P
+ src/redux/actions/userActions.js,2\f\2f7fdc6ec75966f0b5a3ca9c3677d3c918b14e1b
+J
+src/redux/actions/index.js,a\6\a69cd6ba3066314a5be6dcf1fa94c930f11848fe
+T
+$src/pages/Page1/ProductsContainer.js,d\d\dd171dd54018b7a840dd62e115e79a95aa7896bc
