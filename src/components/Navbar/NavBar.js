@@ -1,19 +1,19 @@
-import React          from 'react';
-import AppBar         from '@material-ui/core/AppBar';
-import Toolbar        from '@material-ui/core/Toolbar';
-import IconButton     from '@material-ui/core/IconButton';
-import Typography     from '@material-ui/core/Typography';
-import Badge          from '@material-ui/core/Badge';
-import StorefrontIcon from '@material-ui/icons/Storefront';
-import {ShoppingCart} from "@material-ui/icons";
-import {useStyles}    from "./style";
-import {Link}         from "react-router-dom";
-import Search         from "./components/search";
+import React              from 'react';
+import AppBar             from '@material-ui/core/AppBar';
+import Toolbar            from '@material-ui/core/Toolbar';
+import IconButton         from '@material-ui/core/IconButton';
+import Typography         from '@material-ui/core/Typography';
+import Badge              from '@material-ui/core/Badge';
+import StorefrontIcon     from '@material-ui/icons/Storefront';
+import {ShoppingCart}     from "@material-ui/icons";
+import {useStyles}        from "./style";
+import {Link, withRouter} from "react-router-dom";
+import Search             from "./components/search";
 
 
 const NavBar = () => {
     const classes = useStyles();
-
+    const location = window.location.pathname
     return (
         <div className={classes.grow}>
             <AppBar>
@@ -30,7 +30,9 @@ const NavBar = () => {
                         className={classes.title} variant="h6" noWrap>
                         Store
                     </Typography>
-                   <Search/>
+                    {location === '/' &&
+                    <Search/>
+                    }
                     <div className={classes.grow}/>
                     <div className={classes.sectionDesktop}>
                         <IconButton aria-label="show 17 new notifications"
@@ -47,7 +49,7 @@ const NavBar = () => {
         </div>
     );
 }
-export default NavBar;
+export default withRouter(NavBar);
 /*return (
     <>
         {/!* Default Link tag. Make sure you always use Link from 'react-router-dom' and not from '@materialui...' *!/}
