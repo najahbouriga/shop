@@ -9,6 +9,7 @@ const Cart = () => {
     return (<div>
         {JSON.stringify(cart)}
         {JSON.stringify(amount)}
+        helllooooooooooooooooooooooooooooo
     </div>)
 };
 
