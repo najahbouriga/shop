@@ -19,6 +19,16 @@ export const useStyles = makeStyles((theme) => ({
                 display: 'flex'
             }
         },
+        CartFooter: {
+            paddingTop: theme.spacing.unit * 2,
+            width: '100%',
+        },
+        CartFooterButton: {
+            float: 'right'
+        }, CartFooterTotal: {
+            float: 'left'
+        },
+
         headerGridItem: {
             width: theme.spacing.unit * 10,
             textAlign: 'center'

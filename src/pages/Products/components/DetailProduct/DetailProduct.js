@@ -1,18 +1,20 @@
 import React                                from 'react';
-import {connect}                            from "react-redux";
+import {connect, useDispatch}               from "react-redux";
 import {Link}                               from "react-router-dom";
 import {Button, Grid}                       from "@material-ui/core"
 import {AddShoppingCart, KeyboardArrowLeft} from "@material-ui/icons";
 import CardMedia                            from "@material-ui/core/CardMedia";
 import {useStyles}                          from "./styles";
+import allActions                           from "../../../../redux/actions";
 /* this page is shown when the user clicks at the img of a product */
 
 
 const DetailProduct = (props) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
     const product = props.products.filter(product =>
         product.id === Number(props.match.params.id))[0]
-    const {category, image, description, price, title,} = product
+    const {id, category, image, description, price, title, qty} = product
 
     return (
 
@@ -41,9 +43,12 @@ const DetailProduct = (props) => {
                         Back to Store
                     </Button>
                     <Button
-                        onClick={() => {
-                            console.log('props.dispatch(addProductToCart(product))')
-                        }}
+                        onClick={() =>
+                            dispatch(
+                                allActions.cartActions.addToCart(
+                                    id, title, price, description, category, image, qty
+                                ))
+                        }
                         variant="contained"
                         color="primary"
                         className={classes.btn}

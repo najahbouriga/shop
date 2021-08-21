@@ -7,12 +7,12 @@ import "fontsource-roboto";
 import {BrowserRouter} from "react-router-dom";
 import {RouterConfig}  from "navigation/RouterConfig";
 
-import {ProvideAuth}           from "navigation/Auth/ProvideAuth";
+import {ProvideAuth} from "navigation/Auth/ProvideAuth";
 // Redux
-import {Provider, useDispatch} from 'react-redux';
-import {store}                 from "./redux/store";
-import NavBar                  from "./components/Navbar/NavBar";
-import withStyles              from "@material-ui/core/styles/withStyles";
+import {Provider}    from 'react-redux';
+import {store}       from "./redux/store";
+import NavBar        from "./components/Navbar/NavBar";
+import withStyles    from "@material-ui/core/styles/withStyles";
 
 const styles = (theme) => ({
     toolbar: theme.mixins.toolbar,
