@@ -1,20 +1,24 @@
-import {ADD_TO_CART, CLEAR_ALERT, CLEAR_CART, DECREASE, GET_TOTALS, INCREASE, REMOVE_ITEM,} from "../actions/types";
+import {
+    ADD_TO_CART,
+    CLEAR_ALERT,
+    CLEAR_CART,
+    DECREASE,
+    GET_TOTALS,
+    INCREASE,
+    REMOVE_ITEM,
+} from '../actions/types';
 
 const showAlert = (show = false, type = '', msg = '') => ({show, type, msg});
 
-const getLocalStorage = () =>
-    localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 
 const initialCartState = {
-    cart: getLocalStorage(),
+    cart: [],
     totalPrice: 0,
     amount: 0,
     alert: {show: false, type: '', msg: ''},
 };
 
 const cartReducer = (state = initialCartState, {type, payload}) => {
-    console.log('cartReducer', state)
-
     switch (type) {
         case GET_TOTALS: {
             let {totalPrice, amount} = state.cart.reduce(
@@ -38,27 +42,22 @@ const cartReducer = (state = initialCartState, {type, payload}) => {
             const existingCartItem = state.cart.find(
                 (product) => product.id === productId
             );
-
             if (existingCartItem) {
                 const cart = state.cart.map((product) =>
                     product.id === productId
                         ? {...product, qty: product.qty + 1}
-                        : product
-                );
-
+                        : product);
                 return {
                     ...state,
                     cart,
                     alert: showAlert(true, 'success', 'Added to Cart'),
                 };
             }
-
             return {
                 ...state,
                 cart: [...state.cart, {...payload, qty: 1}],
                 alert: showAlert(true, 'success', 'Added to Cart'),
             };
-
         case INCREASE:
             const cart = state.cart.map((item) =>
                 item.id === payload ? {...item, qty: item.qty + 1} : item

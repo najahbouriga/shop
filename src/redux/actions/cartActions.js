@@ -1,5 +1,6 @@
 import {ADD_TO_CART, CLEAR_ALERT, CLEAR_CART, DECREASE, GET_TOTALS, INCREASE, REMOVE_ITEM} from "./types";
 
+
 const getTotals = () => ({type: GET_TOTALS});
 
 const addToCart = (id, title, price, description, category, image, qty) => ({

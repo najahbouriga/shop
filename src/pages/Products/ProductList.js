@@ -17,7 +17,6 @@ class ProductList extends React.Component {
     }
 
     componentDidUpdate() {
-        console.log('douuuuuuuuu');
         setTimeout(
             () => this.props.dispatch(allActions.cartActions.clearAlert()),
             5000
@@ -35,7 +34,9 @@ class ProductList extends React.Component {
             return <div>Error! {error.message}</div>;
         }
         if (loading) {
-            return <CircularProgress variant="determinate" value={100}/>;
+            return (<div className={classes.paper}>
+                <CircularProgress variant="determinate" value={100}/>;
+            </div>)
         }
         return (
             <div className={classes.root}>

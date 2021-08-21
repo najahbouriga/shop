@@ -78,13 +78,7 @@ const ProductItem = ({id, title, price, description, category, image, qty}) => {
                         onClick={() =>
                             dispatch(
                                 allActions.cartActions.addToCart(
-                                    id,
-                                    title,
-                                    price,
-                                    description,
-                                    category,
-                                    image,
-                                    qty
+                                    id, title, price, description, category, image, qty
                                 ))
                         }
                         variant="contained"

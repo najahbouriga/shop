@@ -20,7 +20,6 @@ const styles = (theme) => ({
 // const selectAlert = (state) => state.cart.alert;
 
 const App = (props) => {
-
     // const alert = useSelector(selectAlert);
     const {classes} = props;
     // const dispatch = useDispatch();
