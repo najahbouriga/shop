@@ -23,6 +23,7 @@ const NavBar = () => {
     const cart = useSelector(selectCart);
 
     useEffect(() => {
+        console.log('hahhahah')
         dispatch(allActions.cartActions.getTotals());
     }, [cart, dispatch]);
 

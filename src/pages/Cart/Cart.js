@@ -10,7 +10,6 @@ const Cart = () => {
     const amount = useSelector(selectAmount);
     return (<div>
         {cart.length ? <CartItem/> : <EmptyCart/>}
-
     </div>)
 };
 

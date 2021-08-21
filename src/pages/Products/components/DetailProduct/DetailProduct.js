@@ -2,31 +2,11 @@ import React                                from 'react';
 import {connect}                            from "react-redux";
 import {Link}                               from "react-router-dom";
 import {Button, Grid}                       from "@material-ui/core"
-import {makeStyles}                         from "@material-ui/core/styles";
 import {AddShoppingCart, KeyboardArrowLeft} from "@material-ui/icons";
 import CardMedia                            from "@material-ui/core/CardMedia";
+import {useStyles}                          from "./styles";
 /* this page is shown when the user clicks at the img of a product */
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        width: "70%",
-        margin: "auto",
-    },
-
-    txt: {
-        textAlign: "justify",
-    },
-    btn: {
-        margin: theme.spacing.unit,
-    },
-    made: {
-        textTransform: "uppercase",
-    },
-    cardMedia: {
-        paddingTop: '56.25%', // 16:9
-        backgroundSize: 'contain',
-    },
-}));
 
 const DetailProduct = (props) => {
     const classes = useStyles();

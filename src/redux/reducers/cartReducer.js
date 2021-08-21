@@ -5,6 +5,7 @@ import {
     DECREASE,
     GET_TOTALS,
     INCREASE,
+    UPDATE_ITEM,
     REMOVE_ITEM,
 } from '../actions/types';
 
@@ -72,7 +73,6 @@ const cartReducer = (state = initialCartState, {type, payload}) => {
             return {...state, cart: newCart};
         case REMOVE_ITEM:
             const itemRemoved = state.cart.filter((item) => item.id !== payload);
-
             return {
                 ...state,
                 cart: itemRemoved,
