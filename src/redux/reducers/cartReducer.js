@@ -13,6 +13,8 @@ const initialCartState = {
 };
 
 const cartReducer = (state = initialCartState, {type, payload}) => {
+    console.log('cartReducer', state)
+
     switch (type) {
         case GET_TOTALS: {
             let {totalPrice, amount} = state.cart.reduce(
