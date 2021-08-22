@@ -1,12 +1,12 @@
-import {ADD_TO_CART, CLEAR_CART, DECREASE, GET_TOTALS, INCREASE, REMOVE_ITEM,} from '../actions/types';
+import {ADD_TO_CART, CLEAR_CART, DECREASE, GET_TOTALS, INCREASE, REMOVE_ITEM,} from '../actions/CONSTANTS';
 
+// initiat state of cart
 const initialCartState = {
     cart: [],
     totalPrice: 0,
     amount: 0
 };
-
-const cartReducer = (state = initialCartState, {type, payload}) => {
+export const cartReducer = (state = initialCartState, {type, payload}) => {
     switch (type) {
         case GET_TOTALS: {
             let {totalPrice, amount} = state.cart.reduce(

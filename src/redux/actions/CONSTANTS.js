@@ -1,3 +1,5 @@
+/* declare action types*/
+
 // products
 export const LOADING = 'LOADING';
 export const DISPLAY_ITEMS = 'DISPLAY_ITEMS';

@@ -7,6 +7,9 @@ import {CARt}          from "./CONSTANTS";
 import Cart            from "../pages/Cart/Cart";
 import Home            from "../pages/Home/Home";
 
+
+// “Router Config.js” will have all the routes of the application.
+
 export const RouterConfig = () => {
     return (
         <div>
