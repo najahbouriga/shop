@@ -6,6 +6,7 @@ import {connect}        from 'react-redux';
 import {NavBar}         from "../../components/Navbar/NavBar";
 import {useStyles}      from "./styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Backdrop         from '@material-ui/core/Backdrop';
 
 
 class ProductList extends React.Component {
@@ -25,9 +26,11 @@ class ProductList extends React.Component {
             return <div>Error! {error.message}</div>;
         }
         if (loading) {
-            return (<div className={classes.paper}>
-                Loading...
-            </div>)
+            return (
+                <Backdrop className={classes.backdrop} open>
+                    <CircularProgress color="inherit"/>
+                </Backdrop>
+            )
         }
         return (<div className={classes.root}>
             <Grid container justify="center" spacing={3}>

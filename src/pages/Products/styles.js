@@ -7,6 +7,10 @@ export const useStyles = withStyles((theme) => ({
     button: {
         margin: theme.spacing(1),
     },
+    backdrop: {
+        zIndex: theme.zIndex.drawer + 1,
+        color: '#fff',
+    },
     paper: {
         display: 'flex',
         justifyContent: 'space-around',
