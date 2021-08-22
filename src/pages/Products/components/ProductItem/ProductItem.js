@@ -17,9 +17,7 @@ const ProductItem = ({id, title, price, description, category, image, qty}) => {
     const classes = useStyles();
 
     /*
-    * This hook returns a reference to the dispatch
-    *  function from the Redux store.
-    * to dispatch actions as needed.
+    * to dispatch actions as needed
     */
     const dispatch = useDispatch();
     return (
