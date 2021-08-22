@@ -9,8 +9,5 @@ export const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             width: '300px',
         },
-    },
-    indicator: {
-        color: theme.palette.primary.main,
-    },
+    }
 }));

@@ -26,22 +26,21 @@ class ProductList extends React.Component {
         }
         if (loading) {
             return (<div className={classes.paper}>
-                <CircularProgress variant="determinate" value={100}/>;
+                Loading...
             </div>)
         }
-        return (
-            <div className={classes.root}>
-                <Grid container justify="center" spacing={3}>
-                    {products.map(
-                        (product) =>
-                            queryMatch(product) && (
-                                <Grid key={product.id} item xs={12} sm={4} lg={3}>
-                                    <ProductItem {...product}/>
-                                </Grid>
-                            ))
-                    }
-                </Grid>
-            </div>);
+        return (<div className={classes.root}>
+            <Grid container justify="center" spacing={3}>
+                {products.map(
+                    (product) =>
+                        queryMatch(product) && (
+                            <Grid key={product.id} item xs={12} sm={4} lg={3}>
+                                <ProductItem {...product}/>
+                            </Grid>
+                        ))
+                }
+            </Grid>
+        </div>);
     }
 }
 

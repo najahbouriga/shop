@@ -36,12 +36,10 @@ const Search = () => {
                 clearOnBlur
                 fullWidth
                 options={options}
-                classes={{
-                    clearIndicator: classes.indicator,
-                }}
                 onChange={handleChangeSelect}
                 renderInput={(params) => (
                     <TextField
+                        placeholder="Search ...."
                         {...params}
                         variant="outlined"
                         InputProps={{...params.InputProps}}
