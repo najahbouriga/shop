@@ -6,6 +6,7 @@ const initialCartState = {
     totalPrice: 0,
     amount: 0
 };
+// cart reducer function
 export const cartReducer = (state = initialCartState, {type, payload}) => {
     switch (type) {
         case GET_TOTALS: {

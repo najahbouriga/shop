@@ -1,4 +1,4 @@
-/* declare action types*/
+/* declare action types  */
 
 // products
 export const LOADING = 'LOADING';

@@ -7,7 +7,7 @@ import Cart            from "../pages/Cart/Cart";
 import ProductList     from "../pages/Products/ProductList";
 
 
-// “Router Config.js” will have all the routes of the application.
+// “Router Config.js” contains all the routes of the application.
 
 export const RouterConfig = () => {
     return (

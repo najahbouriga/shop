@@ -8,7 +8,7 @@ const initialProductState = {
     query: '',
 };
 
-/* product reducer has as parameter state and action  */
+/* product reducer */
 export const productReducer = (state = initialProductState, action) => {
     switch (action.type) {
         case LOADING:

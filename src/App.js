@@ -1,13 +1,13 @@
-import React           from "react";
-// Styles
-import "fontsource-roboto";
+import React from "react";
+
 // ROUTER
 import {BrowserRouter} from "react-router-dom";
 import {RouterConfig}  from "navigation/RouterConfig";
 
 // Redux
-import {Provider} from 'react-redux';
 import {store}    from "./redux/store";
+import {Provider} from 'react-redux';
+//NavBar Component
 import NavBar     from "./components/Navbar/NavBar";
 import withStyles from "@material-ui/core/styles/withStyles";
 
@@ -17,7 +17,6 @@ const styles = (theme) => ({
 
 const App = (props) => {
     const {classes} = props;
-
     return (
         <Provider store={store}>
             <BrowserRouter>

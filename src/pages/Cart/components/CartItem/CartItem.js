@@ -78,7 +78,7 @@ const CartItem = () => {
             }
             <div className={classes.CartFooter}>
                 <Typography variant="h5" className={classes.CartFooterTotal}>
-                    Subtotal: <strong>{totalPrice}&nbsp;€</strong>
+                    Total price: <strong>{totalPrice}&nbsp;€</strong>
                 </Typography>
                 <div className={classes.CartFooterButton}>
 

@@ -7,7 +7,8 @@ import CardMedia                            from "@material-ui/core/CardMedia";
 import {useStyles}                          from "./styles";
 import allActions                           from "../../../../redux/actions";
 
-/* this page is shown when the user clicks at the img of a product */
+/*this component display all the details related to the selected product */
+
 
 const selectProducts = (state) => state.products.products;
 

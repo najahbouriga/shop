@@ -1,17 +1,18 @@
-import ProductItem                         from './components/ProductItem/ProductItem';
-import Grid                                from '@material-ui/core/Grid';
-import allActions                          from '../../redux/actions';
-import {connect, useDispatch, useSelector} from 'react-redux';
-import {NavBar}                            from "../../components/Navbar/NavBar";
-import {useStyles}                         from "./styles";
-import CircularProgress                    from "@material-ui/core/CircularProgress";
-import Backdrop                            from '@material-ui/core/Backdrop';
-import React, {useEffect}                  from 'react';
+import ProductItem                from './components/ProductItem/ProductItem';
+import Grid                       from '@material-ui/core/Grid';
+import allActions                 from '../../redux/actions';
+import {useDispatch, useSelector} from 'react-redux';
+import {useStyles}                from "./styles";
+import CircularProgress           from "@material-ui/core/CircularProgress";
+import Backdrop                   from '@material-ui/core/Backdrop';
+import React, {useEffect}         from 'react';
 
 const selectLoading = (state) => state.products.loading;
 const selectProducts = (state) => state.products.products;
 const selectError = (state) => state.products.error;
 const selectQuery = (state) => state.products.query;
+
+/*this component display all products */
 
 
 const ProductList = () => {
@@ -25,10 +26,10 @@ const ProductList = () => {
     // query
     const queryMatch = (product) => product.title.toLowerCase().includes(query.toLowerCase());
 
-    useEffect(() =>
-            dispatch(allActions.productsActions.fetchProducts()),
-        []);
-    
+    useEffect(() => {
+            dispatch(allActions.productsActions.fetchProducts())
+        }, [dispatch]);
+
     if (error) {
         return <div>Error! {error.message}</div>;
     }

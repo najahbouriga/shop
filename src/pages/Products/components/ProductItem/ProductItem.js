@@ -11,6 +11,7 @@ import {useDispatch}     from "react-redux";
 import allActions        from "../../../../redux/actions";
 import {useStyles}       from "./styles";
 
+/*this component display product */
 
 const ProductItem = ({id, title, price, description, category, image, qty}) => {
 
@@ -20,6 +21,7 @@ const ProductItem = ({id, title, price, description, category, image, qty}) => {
     * to dispatch actions as needed
     */
     const dispatch = useDispatch();
+
     return (
 
         <Card className={classes.card}>
