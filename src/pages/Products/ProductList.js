@@ -32,18 +32,21 @@ class ProductList extends React.Component {
                 </Backdrop>
             )
         }
-        return (<div className={classes.root}>
-            <Grid container justify="center" spacing={3}>
-                {products.map(
-                    (product) =>
-                        queryMatch(product) && (
-                            <Grid key={product.id} item xs={12} sm={4} lg={3}>
-                                <ProductItem {...product}/>
-                            </Grid>
-                        ))
-                }
-            </Grid>
-        </div>);
+        return (
+            <div className={classes.root}>
+                <Grid container justify="center" spacing={3}>
+                    {products.map(
+                        (product) =>
+                            queryMatch(product) && (
+                                <Grid key={product.id} item xs={12} sm={4} lg={3}>
+                                    <ProductItem {...product}/>
+                                </Grid>
+                            ))
+                    }
+                </Grid>
+            </div>
+
+        );
     }
 }
 
