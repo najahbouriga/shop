@@ -1,11 +1,10 @@
 import React           from "react";
 import {Route, Switch} from "react-router-dom";
 import {NotFound}      from "navigation/NotFound";
-import {ROOT}          from "navigation/CONSTANTS";
 import DetailProduct   from "../pages/Products/components/DetailProduct/DetailProduct";
-import {CARt}          from "./CONSTANTS";
+import {ROOT, CARt}    from "./CONSTANTS";
 import Cart            from "../pages/Cart/Cart";
-import Home            from "../pages/Home/Home";
+import ProductList     from "../pages/Products/ProductList";
 
 
 // “Router Config.js” will have all the routes of the application.
@@ -15,7 +14,7 @@ export const RouterConfig = () => {
         <div>
             <Switch>
                 {/* List all public routes here */}
-                <Route exact path={ROOT} component={Home}/>
+                <Route exact path={ROOT} component={ProductList}/>
                 <Route exact path={CARt} component={Cart}/>
                 <Route exact path='/detail/:id' component={DetailProduct}/>
                 {/* List a generic 404-Not Found route here */}

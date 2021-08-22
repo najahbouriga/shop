@@ -17,10 +17,10 @@ const selectCart = (state) => state.cart.cart;
 
 const NavBar = () => {
     const classes = useStyles();
-    const amount = useSelector(selectAmount);
-    const location = window.location.pathname
     const dispatch = useDispatch();
+    const amount = useSelector(selectAmount);
     const cart = useSelector(selectCart);
+    const location = window.location.pathname
 
     useEffect(() => {
         dispatch(allActions.cartActions.getTotals());

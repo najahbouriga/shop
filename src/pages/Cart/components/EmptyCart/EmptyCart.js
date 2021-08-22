@@ -4,6 +4,8 @@ import {Link}                      from 'react-router-dom';
 import useStyles                   from './styles';
 import React                       from "react";
 
+/* This page is shown when the user clicks on the basket, and it is empty */
+
 const EmptyCart = () => {
     const classes = useStyles();
     const image = 'https://www.jumia.com.tn/images/oshun/cart/empty-cart.png'

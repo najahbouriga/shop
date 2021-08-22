@@ -18,6 +18,7 @@ class ProductList extends React.Component {
     render() {
         const classes = useStyles;
         const {error, loading, products, query} = this.props;
+
         // query
         const queryMatch = (product) =>
             product.title.toLowerCase().includes(query.toLowerCase());
