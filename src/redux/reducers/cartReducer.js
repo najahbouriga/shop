@@ -1,22 +1,9 @@
-import {
-    ADD_TO_CART,
-    CLEAR_ALERT,
-    CLEAR_CART,
-    DECREASE,
-    GET_TOTALS,
-    INCREASE,
-    UPDATE_ITEM,
-    REMOVE_ITEM,
-} from '../actions/types';
-
-const showAlert = (show = false, type = '', msg = '') => ({show, type, msg});
-
+import {ADD_TO_CART, CLEAR_CART, DECREASE, GET_TOTALS, INCREASE, REMOVE_ITEM,} from '../actions/types';
 
 const initialCartState = {
     cart: [],
     totalPrice: 0,
-    amount: 0,
-    alert: {show: false, type: '', msg: ''},
+    amount: 0
 };
 
 const cartReducer = (state = initialCartState, {type, payload}) => {
@@ -50,14 +37,12 @@ const cartReducer = (state = initialCartState, {type, payload}) => {
                         : product);
                 return {
                     ...state,
-                    cart,
-                    alert: showAlert(true, 'success', 'Added to Cart'),
+                    cart
                 };
             }
             return {
                 ...state,
-                cart: [...state.cart, {...payload, qty: 1}],
-                alert: showAlert(true, 'success', 'Added to Cart'),
+                cart: [...state.cart, {...payload, qty: 1}]
             };
         case INCREASE:
             const cart = state.cart.map((item) =>
@@ -75,19 +60,13 @@ const cartReducer = (state = initialCartState, {type, payload}) => {
             const itemRemoved = state.cart.filter((item) => item.id !== payload);
             return {
                 ...state,
-                cart: itemRemoved,
-                alert: showAlert(true, 'error', 'Removed item from Cart'),
+                cart: itemRemoved
             };
         case CLEAR_CART:
             return {
                 ...state,
-                cart: [],
-                alert: showAlert(true, 'error', 'Cart cleared'),
+                cart: []
             };
-        // alert
-        case CLEAR_ALERT: {
-            return {...state, alert: showAlert()};
-        }
         default:
             return state;
     }

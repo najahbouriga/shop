@@ -1,13 +1,11 @@
-import React                  from 'react';
-import ProductItem            from './components/ProductItem/ProductItem';
-import Grid                   from '@material-ui/core/Grid';
-import allActions             from '../../redux/actions';
-import {connect}              from 'react-redux';
-import {NavBar}               from "../../components/Navbar/NavBar";
-import {useStyles}            from "./styles";
-import CircularProgress       from "@material-ui/core/CircularProgress";
-import Alert                  from '@material-ui/lab/Alert';
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import React            from 'react';
+import ProductItem      from './components/ProductItem/ProductItem';
+import Grid             from '@material-ui/core/Grid';
+import allActions       from '../../redux/actions';
+import {connect}        from 'react-redux';
+import {NavBar}         from "../../components/Navbar/NavBar";
+import {useStyles}      from "./styles";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 
 class ProductList extends React.Component {
@@ -16,16 +14,9 @@ class ProductList extends React.Component {
         this.props.dispatch(allActions.productsActions.fetchProducts());
     }
 
-    componentDidUpdate() {
-        setTimeout(
-            () => this.props.dispatch(allActions.cartActions.clearAlert()),
-            5000
-        );
-    }
-
     render() {
         const classes = useStyles;
-        const {error, loading, products, query, alert} = this.props;
+        const {error, loading, products, query} = this.props;
         // query
         const queryMatch = (product) =>
             product.title.toLowerCase().includes(query.toLowerCase());
@@ -40,11 +31,6 @@ class ProductList extends React.Component {
         }
         return (
             <div className={classes.root}>
-                {alert.show && <Alert iconMapping={{success: <CheckCircleOutlineIcon fontSize="inherit"/>}}>
-                    {alert.msg}
-                </Alert>
-                }
-
                 <Grid container justify="center" spacing={3}>
                     {products.map(
                         (product) =>
@@ -54,7 +40,6 @@ class ProductList extends React.Component {
                                 </Grid>
                             ))
                     }
-
                 </Grid>
             </div>);
     }
@@ -63,7 +48,6 @@ class ProductList extends React.Component {
 const mapStateToProps = state => ({
     loading: state.products.loading,
     products: state.products.products,
-    alert: state.cart.alert,
     error: state.products.error,
     query: state.products.query
 

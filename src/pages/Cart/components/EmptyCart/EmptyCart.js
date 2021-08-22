@@ -2,9 +2,7 @@ import {Button, Paper, Typography} from '@material-ui/core';
 import NextWeekIcon                from '@material-ui/icons/NextWeek';
 import {Link}                      from 'react-router-dom';
 import useStyles                   from './styles';
-import CardMedia                   from "@material-ui/core/CardMedia";
 import React                       from "react";
-import Avatar                      from "@material-ui/core/Avatar";
 
 const EmptyCart = () => {
     const classes = useStyles();

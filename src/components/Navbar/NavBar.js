@@ -23,7 +23,6 @@ const NavBar = () => {
     const cart = useSelector(selectCart);
 
     useEffect(() => {
-        console.log('hahhahah')
         dispatch(allActions.cartActions.getTotals());
     }, [cart, dispatch]);
 
@@ -35,7 +34,6 @@ const NavBar = () => {
                     <IconButton
                         edge="start"
                         component={Link} to="/"
-                        className={classes.menuButton}
                         color="inherit"
                         aria-label="open drawer">
                         <StorefrontIcon/>
@@ -45,8 +43,7 @@ const NavBar = () => {
                         Store </Typography>
                     {location === '/' && <Search/>}
                     <div className={classes.grow}/>
-                    <IconButton aria-label="show 17 new notifications"
-                                component={Link} to="/cart"
+                    <IconButton component={Link} to="/cart"
                                 color="inherit">
                         <Badge badgeContent={amount}
                                color="secondary"

@@ -2,7 +2,7 @@
  * theme for MUI
  * TODO: create a theme object as per designs
  */
-import { createMuiTheme } from "@material-ui/core";
+import {createMuiTheme} from "@material-ui/core";
 // import { purple, green, orange, deepOrange } from "@material-ui/core/colors";
 
 // Global styles can be moved to a separate file for ease of maintenance.

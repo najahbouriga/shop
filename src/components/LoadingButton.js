@@ -1,10 +1,10 @@
-import React from "react";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import PropTypes from "prop-types";
+import React            from "react";
+import makeStyles       from "@material-ui/core/styles/makeStyles";
+import PropTypes        from "prop-types";
 // MUI Stuff
 import CircularProgress from "@material-ui/core/CircularProgress";
-import Button from "@material-ui/core/Button";
-import { Typography } from "@material-ui/core";
+import Button           from "@material-ui/core/Button";
+import {Typography}     from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   padLoading: {
