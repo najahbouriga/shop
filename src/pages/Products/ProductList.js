@@ -6,6 +6,9 @@ import {useStyles}                from "./styles";
 import CircularProgress           from "@material-ui/core/CircularProgress";
 import Backdrop                   from '@material-ui/core/Backdrop';
 import React, {useEffect}         from 'react';
+import Button                     from "@material-ui/core/Button";
+import {Link}                     from "react-router-dom";
+import {TABLE}                    from "../../navigation/CONSTANTS";
 
 const selectLoading = (state) => state.products.loading;
 const selectProducts = (state) => state.products.products;
@@ -27,8 +30,8 @@ const ProductList = () => {
     const queryMatch = (product) => product.title.toLowerCase().includes(query.toLowerCase());
 
     useEffect(() => {
-            dispatch(allActions.productsActions.fetchProducts())
-        }, [dispatch]);
+        dispatch(allActions.productsActions.fetchProducts())
+    }, [dispatch]);
 
     if (error) {
         return <div>Error! {error.message}</div>;
@@ -41,7 +44,13 @@ const ProductList = () => {
         )
     }
     return (
+
         <div className={classes.root}>
+            <Button component={Link} to={TABLE} variant="contained" className={classes.btn}>
+                go to product table
+            </Button>
+
+
             <Grid container justify="center" spacing={3}>
                 {products.map(
                     (product) =>
